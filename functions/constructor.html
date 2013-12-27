@@ -1,0 +1,23 @@
+<html>
+<head>
+<script type="text/javascript">
+
+	var TheClass = function(name) {
+		this.name = name;
+	}
+
+	var theObject = new TheClass("Sofia");
+	console.log(theObject.name);
+
+	TheClass.prototype.getFullName = function() {
+		return this.name + " da Silva";
+	}
+
+	console.log(theObject.getFullName());
+
+</script>
+</head>
+<body>
+
+</body>
+</html>

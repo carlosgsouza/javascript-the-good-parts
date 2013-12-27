@@ -1,0 +1,63 @@
+<html>
+<head>
+<script type="text/javascript">
+
+	Function.prototype.method = function(name, func) {
+		this.prototype[name] = func;
+		return this;
+	}
+
+	Array.method("reduce", function(value, f) {
+		for(var i = 0; i < this.length; i++) {
+			value = f(this[i], value);
+		}
+		return value;
+	});
+
+	Array.method("map", function(f) {
+		var result = [];
+		for(var i = 0; i < this.length; i++) {
+			result[i] = f(this[i]);
+		}
+		return result;
+	});
+
+	Array.method("find", function(f) {
+		for(var i = 0; i < this.length; i++) {
+			if(f(this[i])) {
+				return this[i];
+			}
+		}
+	});
+
+	var numbers = [0, 1, 2, 3, 4, 5];
+
+	var sum = numbers.reduce(0, function(a, b) {
+		return a+b;
+	});
+	console.log(sum);
+
+
+	var doubled = numbers.map(function(v) {
+		return 2 * v;
+	});
+	console.log(doubled);
+
+	var doubledSum = numbers.map(function(v) {
+		return 2 * v;
+	}).reduce(0, function(a, b) {
+		return a+b;
+	});
+	console.log(doubledSum);
+
+	var firstOdd = numbers.find(function(v) {
+		return v % 2 == 1;
+	});
+	console.log(firstOdd);
+
+</script>
+</head>
+<body>
+
+</body>
+</html>

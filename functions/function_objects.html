@@ -1,0 +1,33 @@
+<html>
+<head>
+<script type="text/javascript">
+
+	var a = {
+		i : 1, 
+		add : function(a) {
+			var that = this;
+
+			// An inner function doesn't have access to the outher function 'this' object, but has access to its local variables
+			var help = function() {
+				console.log(this);
+				return that.i;
+			}
+
+
+			if(typeof a === 'undefined') {
+				return help();
+			} else {
+				return a + this.i;
+			}
+		}
+	}
+
+	console.log(a.add(3));
+	console.log(a.add());
+
+</script>
+</head>
+<body>
+
+</body>
+</html>

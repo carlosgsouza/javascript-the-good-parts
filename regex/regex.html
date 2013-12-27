@@ -1,0 +1,25 @@
+<html>
+<head>
+<script type="text/javascript">
+
+	var containsNumbers = /[0-9]/;
+
+	console.log(containsNumbers.test("abcd"));
+	console.log(containsNumbers.test("123"));
+	console.log(containsNumbers.test("ab123cd"));
+
+	console.log(containsNumbers.exec("abcd"));
+	console.log(containsNumbers.exec("123"));
+	console.log(containsNumbers.exec("ab123cd"));
+
+	var numberGroups = /([0-9]+)/
+	console.log(numberGroups.exec("abcd"));
+	console.log(numberGroups.exec("123"));
+	console.log(numberGroups.exec("ab123cd456ef"));
+
+</script>
+</head>
+<body>
+
+</body>
+</html>

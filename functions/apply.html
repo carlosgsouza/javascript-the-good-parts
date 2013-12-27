@@ -1,0 +1,41 @@
+<html>
+<head>
+<script type="text/javascript">
+
+	var Time = function(hour, minute) {
+		this._hour = hour;
+		this._minute = minute;
+
+		return {
+			hour : this._hour,
+			minute : this._minute,
+			toString : function() {
+				return this.hour + ":" + this.minute;
+			},
+			add : function(h, m) {
+				this.hour = this.hour + h;
+				this.minute = this.minute + m;
+			}
+		}
+	}
+
+	var wakeUp = new Time(6, 10);
+	var sleep = new Time(22, 30);
+
+	console.log(wakeUp.toString);
+	console.log(wakeUp.toString());
+
+	// changes the 'this' reference of the function
+	console.log(wakeUp.toString.apply(sleep));
+
+	wakeUp.add.apply(wakeUp, [1, 2]);
+	sleep.add.apply(wakeUp, [1, 2]);
+	console.log(wakeUp.toString());
+	console.log(sleep.toString());
+
+</script>
+</head>
+<body>
+
+</body>
+</html>

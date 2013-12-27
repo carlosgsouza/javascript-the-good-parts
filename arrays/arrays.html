@@ -1,0 +1,36 @@
+<html>
+<head>
+<script type="text/javascript">
+
+	var print = function(msg) {
+		console.log(msg);
+	}
+
+	var empty = [];
+
+	print(empty);
+	print(empty[0]);
+	print(empty.length);
+
+	var numbers = ['zero', 'one', 'two', 'three', 'four'];
+	print(numbers);
+	print(numbers[0]);
+	print(numbers.length)
+
+	numbers.length = 4;
+	print(numbers);
+
+	delete numbers[2];
+	print(numbers);
+	print(numbers.length);
+
+	for(var i = 0; i < numbers.length; i++) {
+		print(numbers[i]);
+	}
+
+</script>
+</head>
+<body>
+
+</body>
+</html>

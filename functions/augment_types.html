@@ -1,0 +1,29 @@
+<html>
+<head>
+<script type="text/javascript">
+
+	Function.prototype.method = function(name, func) {
+		this.prototype[name] = func;
+		return this;
+	}
+
+	Number.method("negative", function() {
+		return -this;
+	});
+	console.log((1).negative());
+
+
+	var oldString = "      love     ";
+
+	String.method("trim", function() {
+		return this.replace(/^\s+|\s+$/g, '');
+	});
+	console.log("    	bala	  ".trim());
+	console.log(oldString.trim());
+
+</script>
+</head>
+<body>
+
+</body>
+</html>

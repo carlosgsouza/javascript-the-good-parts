@@ -1,0 +1,25 @@
+<html>
+<head>
+<script type="text/javascript">
+
+	var doSomething = function() {
+		console.log("I started doing something");
+		throw {
+			msg : "I got tired and just quit"
+		};
+		console.log("I finished doing something");
+	}
+		
+	try {
+		doSomething();
+	} catch(e) {
+		console.log(e.msg);
+	}
+	doSomething();
+
+</script>
+</head>
+<body>
+
+</body>
+</html>

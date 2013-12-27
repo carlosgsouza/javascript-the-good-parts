@@ -1,0 +1,43 @@
+<html>
+<head>
+<script type="text/javascript">
+
+	if(typeof Object.create !== 'function') {
+		Object.create = function(o) {
+			var F = function(){};
+			F.prototype = o;
+			return new F();
+		}
+	}
+
+	Function.prototype.method = function(name, func) {
+		this.prototype[name] = func;
+		return this;
+	}
+
+	var MyObject = Object.create(Object);
+	MyObject.method("log", function(msg) {
+		console.log(msg);
+	});
+
+	var myObject = Object.create(MyObject);
+	myObject.log("myObject is so coooool");
+
+	var myCar = Object.create(myObject);
+	myCar.name = "Generic car";
+	myCar.turnOn = function() {
+		log(this.name + ": BRRRRRRRRRRRRRRRR");
+	}
+	myCar.turnOn();
+
+	var uno = Object.create(myCar);
+	uno.name = "Uno";
+	uno.turnOn();
+
+
+</script>
+</head>
+<body>
+
+</body>
+</html>
